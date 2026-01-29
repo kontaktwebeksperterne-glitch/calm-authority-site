@@ -7,26 +7,26 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col items-center md:items-start gap-2">
             <span className="font-serif text-lg text-foreground">
-              Arne Lorenzen
+              Arne Berg Lorenzen
             </span>
             <span className="editorial-body-sm text-muted-foreground">
-              Ledelsesrådgiver & Bestyrelsesmedlem
+              Independent Board Director · Advisory · Lecturer
             </span>
           </div>
           
           <div className="flex items-center gap-6">
             <a 
-              href="mailto:contact@arnelorenzen.com"
+              href="mailto:arne.lorenzen@yahoo.fr"
               className="editorial-body-sm editorial-link"
             >
-              contact@arnelorenzen.com
+              arne.lorenzen@yahoo.fr
             </a>
             <span className="text-border">|</span>
             <a 
-              href="tel:+4512345678"
+              href="tel:+4577224848"
               className="editorial-body-sm editorial-link"
             >
-              +45 12 34 56 78
+              +45 77 22 48 48
             </a>
           </div>
         </div>

@@ -39,7 +39,7 @@ const Header = () => {
             className="text-lg font-serif text-foreground cursor-pointer hover:text-accent transition-colors"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            Arne Lorenzen
+            Arne Berg Lorenzen
           </span>
           
           {/* Desktop navigation */}
