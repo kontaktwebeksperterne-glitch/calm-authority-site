@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,10 +17,22 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
+  const handleNavigation = (id: string) => {
     setIsMobileMenuOpen(false);
+    if (isHomePage) {
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(`/#${id}`);
+    }
+  };
+
+  const handleLogoClick = () => {
+    if (isHomePage) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
   };
 
   const navItems = [
@@ -37,7 +53,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <span
             className="text-lg font-serif text-foreground cursor-pointer hover:text-accent transition-colors"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={handleLogoClick}
           >
             Arne Berg Lorenzen
           </span>
@@ -48,16 +64,24 @@ const Header = () => {
               {navItems.map((item) => (
                 <li key={item.id}>
                   <button
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => handleNavigation(item.id)}
                     className="editorial-body-sm editorial-link"
                   >
                     {item.label}
                   </button>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={() => navigate("/cv")}
+                  className={`editorial-body-sm editorial-link ${location.pathname === "/cv" ? "text-accent" : ""}`}
+                >
+                  CV
+                </button>
+              </li>
             </ul>
             <button
-              onClick={() => scrollToSection("kontakt")}
+              onClick={() => handleNavigation("kontakt")}
               className="btn-nav"
             >
               Kontakt
@@ -81,16 +105,27 @@ const Header = () => {
               {navItems.map((item) => (
                 <li key={item.id}>
                   <button
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => handleNavigation(item.id)}
                     className="w-full text-left px-6 py-3 editorial-body-sm text-foreground hover:bg-accent/5 transition-colors"
                   >
                     {item.label}
                   </button>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    navigate("/cv");
+                  }}
+                  className={`w-full text-left px-6 py-3 editorial-body-sm hover:bg-accent/5 transition-colors ${location.pathname === "/cv" ? "text-accent" : "text-foreground"}`}
+                >
+                  CV
+                </button>
+              </li>
               <li className="px-6 py-3">
                 <button
-                  onClick={() => scrollToSection("kontakt")}
+                  onClick={() => handleNavigation("kontakt")}
                   className="btn-primary w-full"
                 >
                   Kontakt
