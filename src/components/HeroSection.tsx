@@ -23,21 +23,21 @@ const HeroSection = () => {
             className="editorial-label text-accent mb-6 block opacity-0 animate-fade-in"
             style={{ animationDelay: "0.1s" }}
           >
-            Ledelsesrådgiver & Bestyrelsesmedlem
+            Independent Board Director · Advisory · Business School Lecturer
           </span>
           
           <h1 
             className="editorial-heading-xl text-foreground mb-6 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.3s" }}
           >
-            Global ledelsesrådgiver og bestyrelsesmedlem
+            International erfaring. Strategisk klarhed.
           </h1>
           
           <p 
             className="editorial-body text-muted-foreground max-w-lg mb-10 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.5s" }}
           >
-            Uafhængig konsulent med international bestyrelseserfaring og akademisk undervisningsbaggrund.
+            Erfaren bestyrelsesmedlem og strategisk rådgiver med dyb ekspertise i vedvarende energi og infrastruktur på tværs af Europa og Asien.
           </p>
           
           <div 

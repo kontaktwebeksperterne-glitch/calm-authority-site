@@ -1,8 +1,8 @@
 const stats = [
-  { number: "25+", label: "Års erfaring" },
-  { number: "50+", label: "Virksomheder rådgivet" },
-  { number: "10+", label: "Lande" },
-  { number: "5+", label: "Bestyrelsesroller" },
+  { number: "30+", label: "Års international erfaring" },
+  { number: "12+", label: "Bestyrelsesroller" },
+  { number: "6", label: "Sprog flydende" },
+  { number: "15+", label: "Lande" },
 ];
 
 const StatsSection = () => {

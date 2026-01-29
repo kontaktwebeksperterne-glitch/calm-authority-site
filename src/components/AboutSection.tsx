@@ -1,19 +1,18 @@
-import { User } from "lucide-react";
-import profilePlaceholder from "@/assets/profile-placeholder.jpg";
+import arneHeadshot from "@/assets/arne-headshot.jpg";
 
 const AboutSection = () => {
   return (
     <section id="om" className="section-spacing">
       <div className="container-wide">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Photo placeholder */}
+          {/* Photo */}
           <div className="order-2 md:order-1">
             <div className="relative">
               <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
                 <img 
-                  src={profilePlaceholder} 
-                  alt="Arne Lorenzen"
-                  className="w-full h-full object-cover"
+                  src={arneHeadshot} 
+                  alt="Arne Berg Lorenzen"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
               {/* Decorative element */}
@@ -29,18 +28,21 @@ const AboutSection = () => {
             </span>
             
             <h2 className="editorial-heading-lg text-foreground mb-8">
-              Arne Lorenzen
+              Arne Berg Lorenzen
             </h2>
             
             <div className="space-y-6">
               <p className="editorial-body text-foreground">
-                Arne Lorenzen er en uafhængig ledelseskonsulent og bestyrelsesrådgiver med omfattende international erfaring.
+                Internationalt erfaren bestyrelsesmedlem og strategisk rådgiver med dyb ekspertise inden for vedvarende energi, infrastruktur og organisationsudvikling.
               </p>
               <p className="editorial-body text-muted-foreground">
-                Han har rådgivet virksomheder på tværs af flere brancher, siddet i rådgivende og tilsynsråd i flere lande og undervist på handelshøjskoler i Asien.
+                Med erfaring fra bestyrelser og advisory boards i Europa og Indien, bidrager jeg med strategisk overblik, governance og værdiskabelse. Min baggrund omfatter ledende roller som CEO og COO i internationale energivirksomheder.
               </p>
               <p className="editorial-body text-muted-foreground">
-                Hans arbejde fokuserer på strategisk klarhed, governance og langsigtet værdiskabelse, med støtte til ledelsesteams og bestyrelser i komplekse beslutningsprocesser.
+                Uddannet fra Oxford (Executive MBA), Aarhus Universitet og Fulbright-stipendiat ved University of Washington. Gæsteforelæser ved Management Development Institute i Indien.
+              </p>
+              <p className="editorial-body-sm text-muted-foreground italic">
+                Flydende i dansk, engelsk, fransk, tysk, norsk og svensk.
               </p>
             </div>
             

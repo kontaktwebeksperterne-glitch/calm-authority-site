@@ -21,7 +21,7 @@ const ContactSection = () => {
             
             <div className="space-y-6 mb-10">
               <a 
-                href="mailto:contact@arnelorenzen.com"
+                href="mailto:arne.lorenzen@yahoo.fr"
                 className="flex items-center gap-4 group"
               >
                 <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
@@ -30,22 +30,37 @@ const ContactSection = () => {
                 <div>
                   <span className="block text-sm text-muted-foreground">Email</span>
                   <span className="editorial-body text-foreground group-hover:text-accent transition-colors">
-                    contact@arnelorenzen.com
+                    arne.lorenzen@yahoo.fr
                   </span>
                 </div>
               </a>
               
               <a 
-                href="tel:+4512345678"
+                href="tel:+4577224848"
                 className="flex items-center gap-4 group"
               >
                 <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                   <Phone className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <span className="block text-sm text-muted-foreground">Telefon</span>
+                  <span className="block text-sm text-muted-foreground">Telefon (DK)</span>
                   <span className="editorial-body text-foreground group-hover:text-accent transition-colors">
-                    +45 12 34 56 78
+                    +45 77 22 48 48
+                  </span>
+                </div>
+              </a>
+
+              <a 
+                href="tel:+33745574856"
+                className="flex items-center gap-4 group"
+              >
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                  <Phone className="w-5 h-5 text-accent" />
+                </div>
+                <div>
+                  <span className="block text-sm text-muted-foreground">Telefon (FR)</span>
+                  <span className="editorial-body text-foreground group-hover:text-accent transition-colors">
+                    +33 7 45 57 48 56
                   </span>
                 </div>
               </a>
@@ -53,14 +68,14 @@ const ContactSection = () => {
             
             <div className="flex flex-wrap gap-4">
               <a 
-                href="tel:+4512345678"
+                href="tel:+4577224848"
                 className="btn-primary group"
               >
                 Ring til mig
                 <Phone className="ml-2 w-4 h-4" />
               </a>
               <a 
-                href="mailto:contact@arnelorenzen.com"
+                href="mailto:arne.lorenzen@yahoo.fr"
                 className="btn-secondary group"
               >
                 Send en email

@@ -1,25 +1,25 @@
-import { Target, Users, Briefcase, GraduationCap, ArrowRight } from "lucide-react";
+import { Target, Users, Briefcase, GraduationCap, Globe, Shield, ArrowRight } from "lucide-react";
 
 const services = [
   {
+    icon: Users,
+    title: "Bestyrelsesarbejde",
+    description: "Erfaring fra 12+ bestyrelser og advisory boards i Europa og Indien – med fokus på strategi, governance og værdiskabelse.",
+  },
+  {
     icon: Target,
     title: "Strategisk rådgivning",
-    description: "Rådgivning til virksomheder om strategisk klarhed, retning og langsigtet værdiskabelse.",
+    description: "Bygger bro mellem ledelse og bestyrelse. Sætter prioriteter og sikrer eksekvering med respekt for governance.",
   },
   {
-    icon: Users,
-    title: "Bestyrelses- og advisory board-roller",
-    description: "Erfaring fra tilsyns- og rådgivende bestyrelser i flere lande og brancher.",
-  },
-  {
-    icon: Briefcase,
-    title: "Executive og governance-rådgivning",
-    description: "Støtte til ledelse og bestyrelser i komplekse beslutningsprocesser og organisatoriske udfordringer.",
+    icon: Globe,
+    title: "International erfaring",
+    description: "30+ års erfaring på tværs af lande, virksomheder og kulturer. Komfortabel i at navigere kompleksitet og usikkerhed.",
   },
   {
     icon: GraduationCap,
-    title: "Akademisk undervisning",
-    description: "Gæsteforelæsninger og undervisning på handelshøjskoler i Asien inden for ledelse og strategi.",
+    title: "Undervisning & foredrag",
+    description: "Gæsteforelæser ved Management Development Institute i Indien inden for ledelse, strategi og organisationsudvikling.",
   },
 ];
 
