@@ -1,17 +1,19 @@
 import { Target, Users, Globe, GraduationCap, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/translations";
 
 const icons = [Users, Target, Globe, GraduationCap];
 
 const ServicesSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
-  const services = [
-    { icon: icons[0], ...((t('services.items') as unknown as { title: string; description: string }[])[0]) },
-    { icon: icons[1], ...((t('services.items') as unknown as { title: string; description: string }[])[1]) },
-    { icon: icons[2], ...((t('services.items') as unknown as { title: string; description: string }[])[2]) },
-    { icon: icons[3], ...((t('services.items') as unknown as { title: string; description: string }[])[3]) },
-  ];
+  const serviceItems = translations[language].services.items;
+
+  const services = serviceItems.map((item, index) => ({
+    icon: icons[index],
+    title: item.title,
+    description: item.description,
+  }));
 
   return (
     <section id="fokus" className="section-spacing warm-gradient">
