@@ -1,6 +1,9 @@
 import arneHeadshot from "@/assets/arne-headshot.jpg";
+import { useLanguage } from "@/context/LanguageContext";
 
 const AboutSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="om" className="section-spacing">
       <div className="container-wide">
@@ -24,25 +27,25 @@ const AboutSection = () => {
           {/* Content */}
           <div className="order-1 md:order-2">
             <span className="editorial-label text-accent mb-4 block">
-              Om mig
+              {t('about.label')}
             </span>
             
             <h2 className="editorial-heading-lg text-foreground mb-8">
-              Arne Berg Lorenzen
+              {t('about.name')}
             </h2>
             
             <div className="space-y-6">
               <p className="editorial-body text-foreground">
-                Internationalt erfaren bestyrelsesmedlem og strategisk rådgiver med dyb ekspertise inden for vedvarende energi, infrastruktur og organisationsudvikling.
+                {t('about.bio1')}
               </p>
               <p className="editorial-body text-muted-foreground">
-                Med erfaring fra bestyrelser og advisory boards i Europa og Indien, bidrager jeg med strategisk overblik, governance og værdiskabelse. Min baggrund omfatter ledende roller som CEO og COO i internationale energivirksomheder.
+                {t('about.bio2')}
               </p>
               <p className="editorial-body text-muted-foreground">
-                Uddannet fra Oxford (Executive MBA), Aarhus Universitet og Fulbright-stipendiat ved University of Washington. Gæsteforelæser ved Management Development Institute i Indien.
+                {t('about.bio3')}
               </p>
               <p className="editorial-body-sm text-muted-foreground italic">
-                Flydende i dansk, engelsk, fransk, tysk, norsk og svensk.
+                {t('about.languages')}
               </p>
             </div>
             
@@ -50,7 +53,7 @@ const AboutSection = () => {
               onClick={() => document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" })}
               className="btn-primary mt-8"
             >
-              Tag kontakt
+              {t('about.cta')}
             </button>
           </div>
         </div>

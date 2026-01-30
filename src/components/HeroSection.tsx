@@ -1,7 +1,10 @@
 import { ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { useLanguage } from "@/context/LanguageContext";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   const scrollToContact = () => {
     document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -23,21 +26,21 @@ const HeroSection = () => {
             className="editorial-label text-accent mb-6 block opacity-0 animate-fade-in"
             style={{ animationDelay: "0.1s" }}
           >
-            Independent Board Director · Advisory · Business School Lecturer
+            {t('hero.label')}
           </span>
           
           <h1 
             className="editorial-heading-xl text-foreground mb-6 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.3s" }}
           >
-            International erfaring. Strategisk klarhed.
+            {t('hero.headline')}
           </h1>
           
           <p 
             className="editorial-body text-muted-foreground max-w-lg mb-10 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.5s" }}
           >
-            Erfaren bestyrelsesmedlem og strategisk rådgiver med dyb ekspertise i vedvarende energi og infrastruktur på tværs af Europa og Asien.
+            {t('hero.subheadline')}
           </p>
           
           <div 
@@ -48,14 +51,14 @@ const HeroSection = () => {
               onClick={scrollToContact}
               className="btn-primary group"
             >
-              Kontakt mig
+              {t('hero.ctaPrimary')}
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <button 
               onClick={() => document.getElementById("om")?.scrollIntoView({ behavior: "smooth" })}
               className="btn-secondary"
             >
-              Læs mere
+              {t('hero.ctaSecondary')}
             </button>
           </div>
         </div>

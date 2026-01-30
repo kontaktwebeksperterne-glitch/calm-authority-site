@@ -1,4 +1,7 @@
+import { useLanguage } from "@/context/LanguageContext";
+
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
   
   return (
@@ -10,7 +13,7 @@ const Footer = () => {
               Arne Berg Lorenzen
             </span>
             <span className="editorial-body-sm text-muted-foreground">
-              Independent Board Director · Advisory · Lecturer
+              {t('footer.title')}
             </span>
           </div>
           
@@ -33,7 +36,7 @@ const Footer = () => {
         
         <div className="mt-8 pt-6 border-t border-border/30 text-center">
           <span className="text-sm text-muted-foreground">
-            © {currentYear} Arne Lorenzen. Alle rettigheder forbeholdes.
+            © {currentYear} Arne Lorenzen. {t('footer.rights')}
           </span>
         </div>
       </div>

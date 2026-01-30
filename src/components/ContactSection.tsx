@@ -1,6 +1,9 @@
 import { Mail, Phone, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const ContactSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="kontakt" className="section-spacing">
       <div className="container-wide">
@@ -8,15 +11,15 @@ const ContactSection = () => {
           {/* Content */}
           <div>
             <span className="editorial-label text-accent mb-4 block">
-              Kontakt
+              {t('contact.label')}
             </span>
             
             <h2 className="editorial-heading-lg text-foreground mb-6">
-              Tag en snak med mig
+              {t('contact.headline')}
             </h2>
             
             <p className="editorial-body text-muted-foreground mb-10">
-              Er du interesseret i at høre mere om, hvordan jeg kan bidrage til din virksomhed eller bestyrelse? Lad os tage en uforpligtende samtale.
+              {t('contact.description')}
             </p>
             
             <div className="space-y-6 mb-10">
@@ -28,7 +31,7 @@ const ContactSection = () => {
                   <Mail className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <span className="block text-sm text-muted-foreground">Email</span>
+                  <span className="block text-sm text-muted-foreground">{t('contact.email')}</span>
                   <span className="editorial-body text-foreground group-hover:text-accent transition-colors">
                     arne.lorenzen@yahoo.fr
                   </span>
@@ -43,7 +46,7 @@ const ContactSection = () => {
                   <Phone className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <span className="block text-sm text-muted-foreground">Telefon (DK)</span>
+                  <span className="block text-sm text-muted-foreground">{t('contact.phoneDK')}</span>
                   <span className="editorial-body text-foreground group-hover:text-accent transition-colors">
                     +45 77 22 48 48
                   </span>
@@ -58,7 +61,7 @@ const ContactSection = () => {
                   <Phone className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <span className="block text-sm text-muted-foreground">Telefon (FR)</span>
+                  <span className="block text-sm text-muted-foreground">{t('contact.phoneFR')}</span>
                   <span className="editorial-body text-foreground group-hover:text-accent transition-colors">
                     +33 7 45 57 48 56
                   </span>
@@ -71,14 +74,14 @@ const ContactSection = () => {
                 href="tel:+4577224848"
                 className="btn-primary group"
               >
-                Ring til mig
+                {t('contact.ctaCall')}
                 <Phone className="ml-2 w-4 h-4" />
               </a>
               <a 
                 href="mailto:arne.lorenzen@yahoo.fr"
                 className="btn-secondary group"
               >
-                Send en email
+                {t('contact.ctaEmail')}
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
@@ -93,15 +96,15 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="editorial-heading-md text-foreground mb-2">
-                    Arne Lorenzen
+                    {t('contact.cardTitle')}
                   </h3>
                   <p className="editorial-body-sm text-muted-foreground">
-                    Ledelsesrådgiver & Bestyrelsesmedlem
+                    {t('contact.cardSubtitle')}
                   </p>
                 </div>
                 <div className="pt-6 border-t border-border">
                   <p className="editorial-body-sm text-muted-foreground italic">
-                    "Mit mål er at skabe klarhed og værdi i komplekse beslutningsprocesser."
+                    "{t('contact.cardQuote')}"
                   </p>
                 </div>
               </div>

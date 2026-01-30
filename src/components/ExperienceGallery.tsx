@@ -1,31 +1,34 @@
 import arneIndiaTeam from "@/assets/arne-india-team.jpg";
 import arneOxford from "@/assets/arne-oxford.jpg";
-
-const experiences = [
-  {
-    image: arneIndiaTeam,
-    title: "Ledelse i Indien",
-    description: "CEO for EDF Renewables India – ledelse af vedvarende energiprojekter og teams på tværs af Indien.",
-    alt: "Arne Berg Lorenzen med sit team i Indien",
-  },
-  {
-    image: arneOxford,
-    title: "Oxford Executive MBA",
-    description: "Uddannet fra Saïd Business School, University of Oxford – world-class programme med exceptionelt globalt netværk.",
-    alt: "Oxford Executive MBA graduation",
-  },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 const ExperienceGallery = () => {
+  const { t } = useLanguage();
+
+  const experiences = [
+    {
+      image: arneIndiaTeam,
+      title: t('experience.india.title'),
+      description: t('experience.india.description'),
+      alt: "Arne Berg Lorenzen with his team in India",
+    },
+    {
+      image: arneOxford,
+      title: t('experience.oxford.title'),
+      description: t('experience.oxford.description'),
+      alt: "Oxford Executive MBA graduation",
+    },
+  ];
+
   return (
     <section className="section-spacing">
       <div className="container-wide">
         <div className="text-center mb-12">
           <span className="editorial-label text-accent mb-4 block">
-            Baggrund
+            {t('experience.label')}
           </span>
           <h2 className="editorial-heading-lg text-foreground">
-            International erfaring
+            {t('experience.headline')}
           </h2>
         </div>
         
@@ -36,11 +39,11 @@ const ExperienceGallery = () => {
               className="group overflow-hidden rounded-2xl bg-card border border-border/50 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0 animate-slide-up"
               style={{ animationDelay: `${0.1 + index * 0.15}s` }}
             >
-              <div className="aspect-[16/9] overflow-hidden">
+              <div className="overflow-hidden">
                 <img 
                   src={exp.image} 
                   alt={exp.alt}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-auto max-h-[400px] object-contain bg-muted/20 group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
