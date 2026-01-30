@@ -1,39 +1,23 @@
 import { Quote } from "lucide-react";
-
-const testimonials = [
-  {
-    quote: "Arne har en enestående evne til at skære ind til kernen af komplekse strategiske udfordringer. Hans rådgivning har været uvurderlig for vores bestyrelse.",
-    name: "Thomas M.",
-    title: "Bestyrelsesformand",
-    company: "Tech Virksomhed",
-  },
-  {
-    quote: "En yderst professionel og engageret rådgiver med dyb forståelse for governance og bestyrelsesarbejde på internationalt niveau.",
-    name: "Maria S.",
-    title: "Administrerende Direktør",
-    company: "Industrivirksomhed",
-  },
-  {
-    quote: "Arnes internationale erfaring og strategiske indsigt har bidraget væsentligt til vores vækststrategi og organisatoriske udvikling.",
-    name: "Henrik L.",
-    title: "Partner",
-    company: "Private Equity Fond",
-  },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 const TestimonialsSection = () => {
+  const { t } = useLanguage();
+
+  const testimonials = t('testimonials.items') as unknown as { quote: string; name: string; title: string; company: string }[];
+
   return (
     <section id="anbefalinger" className="section-spacing testimonials-bg">
       <div className="container-wide">
         <div className="text-center mb-16">
           <span className="editorial-label text-accent mb-4 block">
-            Anbefalinger
+            {t('testimonials.label')}
           </span>
           <h2 className="editorial-heading-lg text-foreground mb-4">
-            Hvad mine samarbejdspartnere siger
+            {t('testimonials.headline')}
           </h2>
           <p className="editorial-body text-muted-foreground max-w-xl mx-auto">
-            Tillidsfulde relationer er fundamentet for godt samarbejde
+            {t('testimonials.subheadline')}
           </p>
         </div>
         

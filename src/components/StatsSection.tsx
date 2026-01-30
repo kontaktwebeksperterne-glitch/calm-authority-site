@@ -1,11 +1,15 @@
-const stats = [
-  { number: "30+", label: "Års international erfaring" },
-  { number: "12+", label: "Bestyrelsesroller" },
-  { number: "6", label: "Sprog flydende" },
-  { number: "15+", label: "Lande" },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 const StatsSection = () => {
+  const { t } = useLanguage();
+
+  const stats = [
+    { number: "30+", label: t('stats.experience') },
+    { number: "12+", label: t('stats.boardRoles') },
+    { number: "6", label: t('stats.languages') },
+    { number: "15+", label: t('stats.countries') },
+  ];
+
   return (
     <section className="py-16 md:py-24 stats-gradient">
       <div className="container-wide">

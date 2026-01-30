@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useLanguage } from "@/context/LanguageContext";
+import LanguageToggle from "./LanguageToggle";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const isHomePage = location.pathname === "/";
 
   useEffect(() => {
@@ -36,9 +39,9 @@ const Header = () => {
   };
 
   const navItems = [
-    { id: "om", label: "Om mig" },
-    { id: "fokus", label: "Fokus" },
-    { id: "anbefalinger", label: "Anbefalinger" },
+    { id: "om", label: t('nav.about') },
+    { id: "fokus", label: t('nav.focus') },
+    { id: "anbefalinger", label: t('nav.recommendations') },
   ];
 
   return (
@@ -59,7 +62,7 @@ const Header = () => {
           </span>
           
           {/* Desktop navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             <ul className="flex items-center gap-8">
               {navItems.map((item) => (
                 <li key={item.id}>
@@ -76,26 +79,30 @@ const Header = () => {
                   onClick={() => navigate("/cv")}
                   className={`editorial-body-sm editorial-link ${location.pathname === "/cv" ? "text-accent" : ""}`}
                 >
-                  CV
+                  {t('nav.cv')}
                 </button>
               </li>
             </ul>
+            <LanguageToggle />
             <button
               onClick={() => handleNavigation("kontakt")}
               className="btn-nav"
             >
-              Kontakt
+              {t('nav.contact')}
             </button>
           </div>
 
           {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-3 md:hidden">
+            <LanguageToggle />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-foreground"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile navigation */}
@@ -120,7 +127,7 @@ const Header = () => {
                   }}
                   className={`w-full text-left px-6 py-3 editorial-body-sm hover:bg-accent/5 transition-colors ${location.pathname === "/cv" ? "text-accent" : "text-foreground"}`}
                 >
-                  CV
+                  {t('nav.cv')}
                 </button>
               </li>
               <li className="px-6 py-3">
@@ -128,7 +135,7 @@ const Header = () => {
                   onClick={() => handleNavigation("kontakt")}
                   className="btn-primary w-full"
                 >
-                  Kontakt
+                  {t('nav.contact')}
                 </button>
               </li>
             </ul>
