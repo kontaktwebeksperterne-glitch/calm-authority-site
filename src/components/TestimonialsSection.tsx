@@ -1,10 +1,11 @@
 import { Quote } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/translations";
 
 const TestimonialsSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
-  const testimonials = t('testimonials.items') as unknown as { quote: string; name: string; title: string; company: string }[];
+  const testimonials = translations[language].testimonials.items;
 
   return (
     <section id="anbefalinger" className="section-spacing testimonials-bg">
