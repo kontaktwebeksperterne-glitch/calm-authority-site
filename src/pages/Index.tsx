@@ -2,9 +2,11 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import StatsSection from "@/components/StatsSection";
 import AboutSection from "@/components/AboutSection";
-import ExperienceGallery from "@/components/ExperienceGallery";
+import Slideshow from "@/components/Slideshow";
+import BackgroundSection from "@/components/BackgroundSection";
 import ServicesSection from "@/components/ServicesSection";
-import CareerHighlights from "@/components/CareerHighlights";
+import ExperienceAreasSection from "@/components/ExperienceAreasSection";
+import EducationSection from "@/components/EducationSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -17,9 +19,11 @@ const Index = () => {
         <HeroSection />
         <StatsSection />
         <AboutSection />
-        <ExperienceGallery />
+        <Slideshow />
+        <BackgroundSection />
         <ServicesSection />
-        <CareerHighlights />
+        <ExperienceAreasSection />
+        <EducationSection />
         <TestimonialsSection />
         <ContactSection />
       </main>
