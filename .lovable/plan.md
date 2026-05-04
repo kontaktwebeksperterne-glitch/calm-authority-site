@@ -1,197 +1,57 @@
+## Iteration 2: Arnes feedback
 
+### 1. Billeder
+- Kopiér `user-uploads://nicholas-doherty-pONBhDyOFoM-unsplash.jpg` → `src/assets/hero-bg-offshore.jpg` og brug som nyt hero-baggrundsbillede (offshore vind).
+- Kopiér `user-uploads://Arne_portrait_2_copy.png.jpg` → `src/assets/arne-portrait.jpg` og vis som portræt i venstre side af hero.
 
-## Multi-Language Support + CV Integration + Image Improvements
+### 2. Hero/forside-layout
+- To-kolonne-grid: portræt venstre (mindre, så hele billedet vises uden crop, max-h ca. 480px), tekst højre.
+- Navn: **Arne Lorenzen** (fjern "Berg").
+- Undertitel "Independent Board Director · Advisor · Business School Teacher" – lidt større font.
+- Headline i 3 linjer: "International experience. / Strategic clarity. / Practical results."
+- Ny sub-tekst: "Experienced board member and strategic advisor with deep expertise in international business, renewable energy and infrastructure across Europe and Asia."
+- Generel teksten en tand mindre (skaler editorial-heading-xl/lg lidt ned).
 
-### Overview
-Three major changes to implement:
-1. Add multi-language support (Danish, English, German, French) with a toggle switch
-2. Move compressed CV timeline to the main page
-3. Fix the ExperienceGallery images to show full quality and complete images
+### 3. Default sprog
+- Skift `LanguageContext` initial state fra `'da'` til `'en'` (men behold localStorage-persistens).
 
----
+### 4. Spacing
+- Reducér `section-spacing` padding (fx `py-24` → `py-16`, `md:py-32` → `md:py-20`) i `index.css`.
 
-### Part 1: Multi-Language Support
+### 5. Indholdsopdateringer (alle 4 sprog – primært EN; DA/DE/FR oversættes)
+- **Background – International Experience**: 5 punkter (India / Northern Europe / Germany offshore / M&A / Oxford MBA) med Arnes nye tekster.
+- **Focus Areas**: opdatér til 3 punkter (Board work, Strategic Advisory, Teaching) med fulde nye beskrivelser.
+- **Ny sektion: My Experience Areas** (Leadership, Business development, Organizational design, Business and Markets).
+- **About Me**: erstat med Arnes nye fulde tekst.
+- **Ny sektion: Education** (Oxford / Washington / Aarhus) med beskrivelser og "→"-takeaway-linjer.
+- **Testimonials**: overskrift "Trust and competence is the foundation of effective collaboration"; testimonial-kort erstattes med "Coming soon…" placeholders.
+- **Contact**: fjern "uforpligtende"; ryk højre kort op og tilpas ift. ny tekst.
 
-**Architecture:**
-Create a React Context-based i18n (internationalization) system with a language toggle.
+### 6. Fjern CV
+- Fjern "CV"-link i `Header.tsx` (desktop + mobile).
+- Fjern route `/cv` i `App.tsx` og slet `src/pages/CV.tsx`.
+- Fjern "See full CV"-knap i `CareerHighlights`.
 
-**New files to create:**
+### 7. LinkedIn
+- Tilføj LinkedIn-ikon-link (https://www.linkedin.com/in/arne-lorenzen-mba/) i Header (desktop) + Footer + Contact-sektion.
 
-| File | Purpose |
-|------|---------|
-| `src/context/LanguageContext.tsx` | React Context for managing current language state |
-| `src/translations/da.ts` | Danish translations (current text) |
-| `src/translations/en.ts` | English translations |
-| `src/translations/de.ts` | German translations |
-| `src/translations/fr.ts` | French translations |
-| `src/translations/index.ts` | Export all translations |
-| `src/components/LanguageToggle.tsx` | Dropdown/toggle to switch languages |
+### 8. Slideshow (levende billeder)
+- Ny `Slideshow.tsx`-komponent baseret på shadcn `Carousel` med autoplay (embla-carousel-autoplay) og soft fade/Ken Burns-zoom på hver slide.
+- Foreløbigt placeholder med 2-3 eksisterende assets; klar til at tilføje Arnes kommende billeder.
+- Placér mellem About og Focus Areas (eller hvor det passer redaktionelt).
+- Tilføj subtil Ken Burns-animation (`@keyframes` scale 1.0 → 1.08 over 8s) til hero-baggrund og slideshow-billeder.
 
-**Translation structure example:**
-```text
-translations = {
-  nav: { about, focus, recommendations, cv, contact },
-  hero: { label, headline, subheadline, ctaPrimary, ctaSecondary },
-  about: { label, name, bio1, bio2, bio3, languages, cta },
-  stats: { experience, boardRoles, languages, countries },
-  services: { label, headline, items: [...] },
-  testimonials: { label, headline, subheadline, items: [...] },
-  contact: { label, headline, description, email, phone, ctaCall, ctaEmail },
-  footer: { title, rights },
-  cv: { backLink, title, description, boardTitle, execTitle, eduTitle, teachTitle, langTitle }
-}
-```
+### 9. SEO (let setup)
+- Opdatér `index.html`: engelsk title, meta description, lang="en", canonical link, OG image (`/og-image.jpg`), Twitter card, robots.
+- Tilføj JSON-LD `Person` schema for Arne (navn, jobtitel, sameAs LinkedIn).
+- Tilføj `public/robots.txt` (allow all + sitemap-link) og `public/sitemap.xml` med `/`.
+- Installer `react-helmet-async` for per-side titles (ikke strengt nødvendigt med kun én side, men gør det fremtidssikret) – **alternativ**: bare statisk i index.html. Vælger statisk for simplicitet.
 
-**Language Toggle Design:**
-- Positioned in the Header (next to navigation)
-- Dropdown with flag icons or language codes: DA | EN | DE | FR
-- Stores selected language in localStorage for persistence
-- Updates `<html lang="">` attribute dynamically
+### 10. Analytics (besvares til Arne, ikke implementeret nu)
+- Vil ikke implementere før du bekræfter valg (GA4 vs. Plausible). Nævnes i opsummering.
 
-**Components to update:**
-- `Header.tsx` - Add LanguageToggle, translate nav items
-- `HeroSection.tsx` - All text
-- `StatsSection.tsx` - All text
-- `AboutSection.tsx` - All text
-- `ExperienceGallery.tsx` - All text
-- `ServicesSection.tsx` - All text
-- `TestimonialsSection.tsx` - All text
-- `ContactSection.tsx` - All text
-- `Footer.tsx` - All text
-- `CV.tsx` - All text and section titles
-- `App.tsx` - Wrap with LanguageProvider
-- `index.html` - Dynamic lang attribute
-
----
-
-### Part 2: Compressed CV on Main Page
-
-**Approach:**
-Create a new "Career Highlights" section that shows a condensed version of the CV data on the main page.
-
-**New component:**
-`src/components/CareerHighlights.tsx`
-
-**Design (compact timeline):**
-- Shows 3-4 most notable board positions
-- Shows 3-4 most notable executive roles
-- Education highlights in a horizontal row
-- "See Full CV" button linking to `/cv`
-
-**Layout concept:**
-```text
-┌─────────────────────────────────────────────────┐
-│  KARRIERE (label)                               │
-│  Highlights fra min karriere (heading)          │
-│                                                 │
-│  ┌─────────────────┐  ┌─────────────────┐      │
-│  │ BESTYRELSER     │  │ LEDELSE         │      │
-│  │ • IDBC 2025     │  │ • EDF 2021-24   │      │
-│  │ • NetZero 2025  │  │ • SITAC 2018-21 │      │
-│  │ • WindEurope    │  │ • Nordisk Vind. │      │
-│  │ • JV Norway     │  │ • Theolia       │      │
-│  └─────────────────┘  └─────────────────┘      │
-│                                                 │
-│  UDDANNELSE: Oxford | Fulbright | Aarhus       │
-│                                                 │
-│           [Se komplet CV →]                     │
-└─────────────────────────────────────────────────┘
-```
-
-**Integration:**
-- Add to `Index.tsx` after ServicesSection or ExperienceGallery
-- Uses same data arrays from CV.tsx (extract to shared file)
-
-**Shared data file:**
-`src/data/cv-data.ts` - Contains boardExperience, executiveExperience, education arrays
-
----
-
-### Part 3: Image Quality Improvements
-
-**Issue identified:**
-The images in ExperienceGallery use `aspect-[16/9]` which crops them. The original photos are being cut off.
-
-**Solution:**
-1. Change aspect ratio to match original photo proportions (likely 4:3 or 3:2)
-2. Remove object-cover cropping, use object-contain or natural aspect
-3. Add higher quality image settings
-
-**Changes to `ExperienceGallery.tsx`:**
-```text
-Current:
-- aspect-[16/9] → crops images
-- object-cover object-center → forces cropping
-
-Fix:
-- aspect-[4/3] or remove fixed aspect
-- object-contain or let images show naturally
-- Add max-height constraint instead
-- Ensure full images are visible
-```
-
-**Alternative approach:**
-Use a different layout that doesn't constrain height - let images show at natural proportions within a max-width container.
-
----
-
-### Implementation Order
-
-1. **Extract CV data** to shared file (needed for both CV page and highlights)
-2. **Create language system** (context, translations, toggle)
-3. **Update all components** with translations
-4. **Create CareerHighlights** component
-5. **Fix ExperienceGallery** images
-6. **Test all languages** and responsive layouts
-
----
-
-### Files Summary
-
-| Action | File |
-|--------|------|
-| Create | `src/context/LanguageContext.tsx` |
-| Create | `src/translations/da.ts` |
-| Create | `src/translations/en.ts` |
-| Create | `src/translations/de.ts` |
-| Create | `src/translations/fr.ts` |
-| Create | `src/translations/index.ts` |
-| Create | `src/components/LanguageToggle.tsx` |
-| Create | `src/components/CareerHighlights.tsx` |
-| Create | `src/data/cv-data.ts` |
-| Update | `src/App.tsx` |
-| Update | `src/components/Header.tsx` |
-| Update | `src/components/HeroSection.tsx` |
-| Update | `src/components/StatsSection.tsx` |
-| Update | `src/components/AboutSection.tsx` |
-| Update | `src/components/ExperienceGallery.tsx` |
-| Update | `src/components/ServicesSection.tsx` |
-| Update | `src/components/TestimonialsSection.tsx` |
-| Update | `src/components/ContactSection.tsx` |
-| Update | `src/components/Footer.tsx` |
-| Update | `src/pages/Index.tsx` |
-| Update | `src/pages/CV.tsx` |
-| Update | `index.html` |
-
----
-
-### Technical Details
-
-**LanguageContext implementation:**
-- `useLanguage()` hook returns `{ language, setLanguage, t }` where `t` is translation function
-- Persists language choice to localStorage
-- Updates document lang attribute on change
-
-**Translation function usage:**
-```typescript
-const { t } = useLanguage();
-// Usage: t('hero.headline') → "International erfaring. Strategisk klarhed."
-```
-
-**Image fix specifics:**
-- Remove `aspect-[16/9]`
-- Use `aspect-auto` or natural image dimensions
-- Add `max-h-[400px]` to prevent overly tall images
-- Keep `object-cover` but adjust `object-position` if needed
-- Consider different crops for the specific photos (India team vs Oxford)
-
+### Tekniske noter
+- Kør `bun add embla-carousel-autoplay` til slideshow.
+- Filer der ændres: `index.html`, `src/index.css`, `src/context/LanguageContext.tsx`, `src/translations/{en,da,de,fr}.ts`, `src/components/HeroSection.tsx`, `src/components/Header.tsx`, `src/components/Footer.tsx`, `src/components/AboutSection.tsx`, `src/components/ServicesSection.tsx`, `src/components/CareerHighlights.tsx`, `src/components/TestimonialsSection.tsx`, `src/components/ContactSection.tsx`, `src/App.tsx`, `src/pages/Index.tsx`.
+- Nye filer: `src/components/Slideshow.tsx`, `src/components/ExperienceAreas.tsx`, `src/components/EducationSection.tsx`, `public/robots.txt`, `public/sitemap.xml`, `src/assets/hero-bg-offshore.jpg`, `src/assets/arne-portrait.jpg`.
+- Slettes: `src/pages/CV.tsx`.
