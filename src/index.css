@@ -94,12 +94,12 @@
 @layer components {
   .editorial-heading-xl {
     font-family: var(--font-serif);
-    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal leading-tight tracking-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight tracking-tight;
   }
 
   .editorial-heading-lg {
     font-family: var(--font-serif);
-    @apply text-2xl md:text-3xl lg:text-4xl font-normal leading-tight tracking-tight;
+    @apply text-2xl md:text-3xl font-normal leading-tight tracking-tight;
   }
 
   .editorial-heading-md {
@@ -127,7 +127,7 @@
   }
 
   .section-spacing {
-    @apply py-20 md:py-28 lg:py-36;
+    @apply py-14 md:py-20 lg:py-24;
   }
 
   .container-editorial {
@@ -222,4 +222,14 @@ section[id] {
 .quote-marks::before {
   content: '"';
   @apply text-accent text-6xl font-serif absolute -top-4 -left-2 opacity-30;
+}
+
+/* Ken Burns slow zoom for hero / slideshow */
+@keyframes ken-burns {
+  0%   { transform: scale(1) translate3d(0, 0, 0); }
+  100% { transform: scale(1.08) translate3d(0, -1%, 0); }
+}
+.animate-ken-burns {
+  animation: ken-burns 18s ease-out infinite alternate;
+  will-change: transform;
 }
