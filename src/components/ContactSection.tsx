@@ -1,16 +1,17 @@
 import { Mail, Phone, ArrowRight, Linkedin } from "lucide-react";
+import arneAvatar from "@/assets/arne-avatar.png";
 import { useLanguage } from "@/context/LanguageContext";
 
 const ContactSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="kontakt" className="section-spacing">
+    <section id="kontakt" aria-labelledby="kontakt-heading" className="section-spacing">
       <div className="container-wide">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
           <div>
             <span className="editorial-label text-accent mb-4 block">{t('contact.label')}</span>
-            <h2 className="editorial-heading-lg text-foreground mb-6">{t('contact.headline')}</h2>
+            <h2 id="kontakt-heading" className="editorial-heading-lg text-foreground mb-6">{t('contact.headline')}</h2>
             <p className="editorial-body text-muted-foreground mb-10">{t('contact.description')}</p>
 
             <div className="space-y-6 mb-10">
@@ -70,8 +71,16 @@ const ContactSection = () => {
           <div className="hidden md:block">
             <div className="card-warm p-10 lg:p-12">
               <div className="space-y-6">
-                <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center">
-                  <span className="text-2xl font-serif text-accent">AL</span>
+                <div className="w-24 h-24 rounded-full overflow-hidden ring-2 ring-accent/30 shadow-lg">
+                  <img
+                    src={arneAvatar}
+                    alt="Arne Lorenzen"
+                    className="w-full h-full object-cover"
+                    width="192"
+                    height="192"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div>
                   <h3 className="editorial-heading-md text-foreground mb-2">{t('contact.cardTitle')}</h3>

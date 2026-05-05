@@ -1,6 +1,7 @@
 import { ArrowRight, Linkedin } from "lucide-react";
-import heroBg from "@/assets/hero-bg-offshore.jpg";
-import arnePortrait from "@/assets/arne-portrait.jpg";
+import heroRenewables from "@/assets/hero-renewables.jpg";
+import heroIndia from "@/assets/hero-india.jpg";
+import arnePortrait from "@/assets/arne-hero-portrait.png";
 import { useLanguage } from "@/context/LanguageContext";
 
 const HeroSection = () => {
@@ -12,11 +13,15 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-12">
-      {/* Background image with subtle Ken Burns */}
+      {/* Dual-background crossfade with Ken Burns: renewables ↔ India */}
       <div className="absolute inset-0 overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-ken-burns"
-          style={{ backgroundImage: `url(${heroBg})` }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-ken-burns animate-hero-crossfade-a"
+          style={{ backgroundImage: `url(${heroRenewables})` }}
+        />
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-ken-burns animate-hero-crossfade-b"
+          style={{ backgroundImage: `url(${heroIndia})` }}
         />
       </div>
       <div className="absolute inset-0 hero-overlay" />
@@ -32,8 +37,12 @@ const HeroSection = () => {
               <div className="rounded-2xl overflow-hidden shadow-2xl bg-card">
                 <img
                   src={arnePortrait}
-                  alt="Arne Lorenzen — Independent Board Director"
+                  alt="Arne Lorenzen — Independent Board Director, Advisor and Business School Teacher"
                   className="w-full h-auto object-cover"
+                  width="640"
+                  height="800"
+                  fetchPriority="high"
+                  decoding="async"
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent/10 rounded-2xl -z-10" />
@@ -43,7 +52,7 @@ const HeroSection = () => {
           {/* Text */}
           <div>
             <span
-              className="block text-base md:text-lg font-medium text-accent mb-5 opacity-0 animate-fade-in"
+              className="block text-lg md:text-xl lg:text-2xl font-medium text-accent mb-5 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
               {t('hero.label')}

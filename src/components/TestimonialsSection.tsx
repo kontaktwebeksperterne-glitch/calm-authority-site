@@ -5,11 +5,11 @@ const TestimonialsSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="anbefalinger" className="section-spacing testimonials-bg">
+    <section id="anbefalinger" aria-labelledby="anbefalinger-heading" className="section-spacing testimonials-bg">
       <div className="container-wide">
         <div className="text-center mb-12 max-w-3xl mx-auto">
           <span className="editorial-label text-accent mb-4 block">{t('testimonials.label')}</span>
-          <h2 className="editorial-heading-lg text-foreground mb-4">{t('testimonials.headline')}</h2>
+          <h2 id="anbefalinger-heading" className="editorial-heading-lg text-foreground mb-4">{t('testimonials.headline')}</h2>
           <p className="editorial-body text-muted-foreground">{t('testimonials.subheadline')}</p>
         </div>
 

@@ -127,7 +127,7 @@
   }
 
   .section-spacing {
-    @apply py-14 md:py-20 lg:py-24;
+    @apply py-10 md:py-14 lg:py-16;
   }
 
   .container-editorial {
@@ -232,4 +232,22 @@ section[id] {
 .animate-ken-burns {
   animation: ken-burns 18s ease-out infinite alternate;
   will-change: transform;
+}
+
+/* Dual-bg crossfade: renewables ↔ India */
+@keyframes hero-crossfade-a {
+  0%, 40%   { opacity: 1; }
+  50%, 90%  { opacity: 0; }
+  100%      { opacity: 1; }
+}
+@keyframes hero-crossfade-b {
+  0%, 40%   { opacity: 0; }
+  50%, 90%  { opacity: 1; }
+  100%      { opacity: 0; }
+}
+.animate-hero-crossfade-a {
+  animation: hero-crossfade-a 24s ease-in-out infinite, ken-burns 18s ease-out infinite alternate;
+}
+.animate-hero-crossfade-b {
+  animation: hero-crossfade-b 24s ease-in-out infinite, ken-burns 18s ease-out infinite alternate;
 }

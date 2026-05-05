@@ -9,11 +9,11 @@ const ServicesSection = () => {
   const items = translations[language].services.items;
 
   return (
-    <section id="fokus" className="section-spacing">
+    <section id="fokus" aria-labelledby="fokus-heading" className="section-spacing">
       <div className="container-wide">
         <div className="text-center mb-12">
           <span className="editorial-label text-accent mb-4 block">{t('services.label')}</span>
-          <h2 className="editorial-heading-lg text-foreground max-w-2xl mx-auto">{t('services.headline')}</h2>
+          <h2 id="fokus-heading" className="editorial-heading-lg text-foreground max-w-2xl mx-auto">{t('services.headline')}</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">

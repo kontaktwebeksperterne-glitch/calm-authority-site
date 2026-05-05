@@ -6,11 +6,11 @@ const ExperienceAreasSection = () => {
   const items = translations[language].experienceAreas.items;
 
   return (
-    <section className="section-spacing warm-gradient">
+    <section id="erfaring" aria-labelledby="erfaring-heading" className="section-spacing warm-gradient">
       <div className="container-wide">
         <div className="text-center mb-12">
           <span className="editorial-label text-accent mb-4 block">{t('experienceAreas.label')}</span>
-          <h2 className="editorial-heading-lg text-foreground">{t('experienceAreas.headline')}</h2>
+          <h2 id="erfaring-heading" className="editorial-heading-lg text-foreground">{t('experienceAreas.headline')}</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">

@@ -7,11 +7,11 @@ const EducationSection = () => {
   const items = translations[language].education.items;
 
   return (
-    <section id="uddannelse" className="section-spacing">
+    <section id="uddannelse" aria-labelledby="uddannelse-heading" className="section-spacing">
       <div className="container-wide">
         <div className="text-center mb-12">
           <span className="editorial-label text-accent mb-4 block">{t('education.label')}</span>
-          <h2 className="editorial-heading-lg text-foreground">{t('education.headline')}</h2>
+          <h2 id="uddannelse-heading" className="editorial-heading-lg text-foreground">{t('education.headline')}</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">

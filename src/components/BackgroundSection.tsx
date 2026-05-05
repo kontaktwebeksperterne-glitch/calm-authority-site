@@ -6,11 +6,11 @@ const BackgroundSection = () => {
   const items = translations[language].background.items;
 
   return (
-    <section id="baggrund" className="section-spacing warm-gradient">
+    <section id="baggrund" aria-labelledby="baggrund-heading" className="section-spacing warm-gradient">
       <div className="container-wide">
         <div className="text-center mb-12">
           <span className="editorial-label text-accent mb-4 block">{t('background.label')}</span>
-          <h2 className="editorial-heading-lg text-foreground">{t('background.headline')}</h2>
+          <h2 id="baggrund-heading" className="editorial-heading-lg text-foreground">{t('background.headline')}</h2>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
