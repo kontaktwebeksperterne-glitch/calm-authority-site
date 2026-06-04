@@ -1,4 +1,4 @@
-export const da = {
+export const it = {
   nav: {
     about: "About",
     background: "Background",

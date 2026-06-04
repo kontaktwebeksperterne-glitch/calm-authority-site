@@ -48,7 +48,7 @@ const Header = () => {
     >
       <nav className="container-wide py-4 md:py-5">
         <div className="flex items-center justify-between">
-          <span className="text-lg font-serif text-foreground cursor-pointer hover:text-accent transition-colors" onClick={handleLogoClick}>
+          <span className="text-xl md:text-2xl font-serif font-bold text-foreground cursor-pointer hover:text-accent transition-colors tracking-tight" onClick={handleLogoClick}>
             Arne Lorenzen
           </span>
 

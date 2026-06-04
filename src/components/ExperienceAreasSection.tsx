@@ -4,13 +4,15 @@ import { translations } from "@/translations";
 const ExperienceAreasSection = () => {
   const { t, language } = useLanguage();
   const items = translations[language].experienceAreas.items;
+  const intro = translations[language].experienceAreas.intro;
 
   return (
     <section id="erfaring" aria-labelledby="erfaring-heading" className="section-spacing warm-gradient">
       <div className="container-wide">
-        <div className="text-center mb-12">
-          <span className="editorial-label text-accent mb-4 block">{t('experienceAreas.label')}</span>
-          <h2 id="erfaring-heading" className="editorial-heading-lg text-foreground">{t('experienceAreas.headline')}</h2>
+        <div className="text-center mb-10 max-w-3xl mx-auto">
+          <span className="editorial-label text-accent mb-3 block">{t('experienceAreas.label')}</span>
+          <h2 id="erfaring-heading" className="editorial-heading-lg text-foreground mb-4">{t('experienceAreas.headline')}</h2>
+          <p className="editorial-body text-muted-foreground">{intro}</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">

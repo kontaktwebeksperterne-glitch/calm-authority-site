@@ -10,6 +10,7 @@ import EducationSection from "@/components/EducationSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import bannerColleagues from "@/assets/arne-talking-many-colleagues.jpg";
 
 const Index = () => {
   return (
@@ -21,8 +22,17 @@ const Index = () => {
         <AboutSection />
         <Slideshow />
         <BackgroundSection />
-        <ServicesSection />
         <ExperienceAreasSection />
+        <div aria-hidden="true" className="w-full overflow-hidden">
+          <img
+            src={bannerColleagues}
+            alt="Arne with colleagues at an industrial site visit"
+            className="w-full h-auto object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <ServicesSection />
         <EducationSection />
         <TestimonialsSection />
         <ContactSection />

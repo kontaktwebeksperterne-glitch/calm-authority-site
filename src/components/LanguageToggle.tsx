@@ -8,7 +8,7 @@ const LanguageToggle = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const languages: Language[] = ['da', 'en', 'de', 'fr'];
+  const languages: Language[] = ['en', 'da', 'de', 'fr', 'it'];
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

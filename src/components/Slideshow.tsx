@@ -1,6 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import slideSpeechBis from "@/assets/arne-speech-bis.png";
+import slideTalkingColleagues from "@/assets/arne-talking-colleagues.png";
 import slideSigning from "@/assets/slide-india-signing.png";
 import slideGreenClimate from "@/assets/slide-india-green-climate.png";
 import slideOffshoreConference from "@/assets/slide-offshore-conference.png";
@@ -11,6 +14,8 @@ import slideOxford from "@/assets/slide-oxford-graduation.png";
 import { useLanguage } from "@/context/LanguageContext";
 
 const slides = [
+  { src: slideSpeechBis, alt: "Arne giving a keynote at the BIS conference" },
+  { src: slideTalkingColleagues, alt: "Arne discussing with colleagues on an industrial site visit" },
   { src: slideSigning, alt: "Arne signing an agreement with an Indian counterparty" },
   { src: slideGreenClimate, alt: "Arne at the Green Climate Company stand, Tamil Nadu" },
   { src: slideOffshoreConference, alt: "Arne speaking at the Offshore Wind Stakeholders Meet, Tamil Nadu" },
@@ -23,41 +28,72 @@ const slides = [
 const Slideshow = () => {
   const { t } = useLanguage();
   const autoplay = useRef(Autoplay({ delay: 4500, stopOnInteraction: false }));
-  const [emblaRef] = useEmblaCarousel({ loop: true, align: "start" }, [autoplay.current]);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" }, [autoplay.current]);
+  const [canPrev, setCanPrev] = useState(false);
+  const [canNext, setCanNext] = useState(false);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const update = () => {
+      setCanPrev(emblaApi.canScrollPrev());
+      setCanNext(emblaApi.canScrollNext());
+    };
+    update();
+    emblaApi.on("select", update);
+    emblaApi.on("reInit", update);
+  }, [emblaApi]);
 
   return (
     <section id="billeder" aria-labelledby="billeder-heading" className="section-spacing">
       <div className="container-wide">
-        <div className="text-center mb-10">
-          <span className="editorial-label text-accent mb-4 block">{t('slideshow.label')}</span>
+        <div className="text-center mb-8">
+          <span className="editorial-label text-accent mb-3 block">{t('slideshow.label')}</span>
           <h2 id="billeder-heading" className="editorial-heading-lg text-foreground">{t('slideshow.headline')}</h2>
         </div>
 
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-4 md:gap-6">
-            {slides.map((s, i) => (
-              <div
-                key={i}
-                className="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_32%] min-w-0 relative"
-              >
-                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-xl bg-muted">
-                  <img
-                    src={s.src}
-                    aria-hidden="true"
-                    alt=""
-                    className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-50"
-                  />
-                  <img
-                    src={s.src}
-                    alt={s.alt}
-                    className="relative w-full h-full object-contain"
-                    loading={i === 0 ? "eager" : "lazy"}
-                    decoding="async"
-                  />
+        <div className="relative">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-4 md:gap-6 items-stretch">
+              {slides.map((s, i) => (
+                <div
+                  key={i}
+                  className="flex-[0_0_85%] sm:flex-[0_0_60%] md:flex-[0_0_45%] lg:flex-[0_0_32%] min-w-0"
+                >
+                  <div className="relative overflow-hidden rounded-2xl shadow-xl bg-card h-full">
+                    <img
+                      src={s.src}
+                      alt={s.alt}
+                      className="block w-full h-auto object-cover"
+                      loading={i === 0 ? "eager" : "lazy"}
+                      decoding="async"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
+          <button
+            type="button"
+            onClick={scrollPrev}
+            aria-label="Previous slide"
+            disabled={!canPrev}
+            className="absolute left-2 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-background/95 border border-border shadow-lg flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground transition-colors disabled:opacity-40"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            type="button"
+            onClick={scrollNext}
+            aria-label="Next slide"
+            disabled={!canNext}
+            className="absolute right-2 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-background/95 border border-border shadow-lg flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground transition-colors disabled:opacity-40"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       </div>
     </section>

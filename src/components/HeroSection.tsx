@@ -52,7 +52,7 @@ const HeroSection = () => {
           {/* Text */}
           <div>
             <span
-              className="block text-lg md:text-xl lg:text-2xl font-medium text-accent mb-5 opacity-0 animate-fade-in"
+              className="block text-lg md:text-xl lg:text-2xl font-medium text-[hsl(220,70%,22%)] mb-5 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
               {t('hero.label')}
