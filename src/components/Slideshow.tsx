@@ -14,8 +14,10 @@ import slideOxford from "@/assets/slide-oxford-graduation.png";
 import { useLanguage } from "@/context/LanguageContext";
 
 // Alternating order: job / academic / job / academic …
-// Stage-speaking shots (speech-bis & offshore-conference) kept maximally apart,
-// incl. across the loop boundary, so the two podium photos never feel adjacent.
+// Stage-speaking shots (speech-bis at pos 1, offshore-conference at pos 5) kept
+// maximally apart. The Green Climate signing shot was previously at pos 9 and
+// looped back adjacent to speech-bis — moved to pos 7 to give it 3-slide loop
+// distance from speech-bis.
 const slides = [
   { src: slideSpeechBis, alt: "Arne giving a keynote at the BIS conference" },
   { src: slideMdiTeaching, alt: "Arne lecturing at Management Development Institute, India" },
@@ -23,9 +25,9 @@ const slides = [
   { src: slideMdiShawl, alt: "Arne receiving a traditional shawl after a talk at MDI" },
   { src: slideOffshoreConference, alt: "Arne speaking at the Offshore Wind Stakeholders Meet, Tamil Nadu" },
   { src: slideMdiCohort, alt: "Arne with the MDI Murshidabad student cohort" },
-  { src: slideTalkingColleagues, alt: "Arne discussing with colleagues on an industrial site visit" },
-  { src: slideOxford, alt: "Arne in academic gown, Oxford Saïd Business School" },
   { src: slideGreenClimate, alt: "Arne at the Green Climate Company stand, Tamil Nadu" },
+  { src: slideOxford, alt: "Arne in academic gown, Oxford Saïd Business School" },
+  { src: slideTalkingColleagues, alt: "Arne discussing with colleagues on an industrial site visit" },
 ];
 
 const Slideshow = () => {
