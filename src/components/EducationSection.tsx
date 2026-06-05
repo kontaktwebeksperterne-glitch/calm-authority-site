@@ -19,9 +19,11 @@ const EducationSection = () => {
             <div key={edu.institution} className="card-warm flex flex-col">
               <div className="mb-4 text-4xl leading-none" aria-hidden="true">{edu.flag}</div>
               <h3 className="font-serif text-xl md:text-2xl font-semibold text-foreground leading-snug">{edu.institution}</h3>
-              <p className="text-sm font-medium text-accent mt-1 mb-3">{edu.degree}</p>
-              <p className="editorial-body-sm text-muted-foreground mb-4 flex-1">{edu.description}</p>
-              <div className="flex items-start gap-2 pt-3 border-t border-border">
+              {edu.country && (
+                <p className="font-serif text-xl md:text-2xl font-semibold text-foreground leading-snug">{edu.country}</p>
+              )}
+              <p className="text-sm font-medium text-accent mt-2 mb-4">{edu.degree}</p>
+              <div className="mt-auto flex items-start gap-2 pt-4 border-t border-border">
                 <ArrowRight className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
                 <p className="editorial-body-sm font-medium text-foreground">{edu.takeaway}</p>
               </div>
