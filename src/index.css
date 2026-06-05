@@ -22,7 +22,7 @@
     --secondary-foreground: 220 25% 14%;
 
     --muted: 42 15% 92%;
-    --muted-foreground: 220 10% 46%;
+    --muted-foreground: 220 15% 32%;
 
     --accent: 195 60% 40%;
     --accent-foreground: 42 30% 97%;
@@ -109,12 +109,12 @@
 
   .editorial-body {
     font-family: var(--font-sans);
-    @apply text-base md:text-lg font-light leading-relaxed;
+    @apply text-base md:text-lg font-normal leading-relaxed;
   }
 
   .editorial-body-sm {
     font-family: var(--font-sans);
-    @apply text-sm md:text-base font-light leading-relaxed;
+    @apply text-sm md:text-base font-normal leading-relaxed;
   }
 
   .editorial-label {

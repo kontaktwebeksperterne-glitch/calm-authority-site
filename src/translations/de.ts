@@ -75,12 +75,9 @@ export const de = {
     ],
   },
   services: {
-    label: "Schwerpunkte",
-    headline: "Expertise, die Werte schafft",
-    india: {
-      title: "Indien, Markteintritt und Wachstum",
-      description: "Meine berufliche Erfahrung und meine Jahre in Indien haben mir tiefe Einblicke in einen der dynamischsten und am schnellsten wachsenden Märkte der Welt und eine bleibende Faszination dafür vermittelt. Ich unterstütze europäische und nordische Unternehmen bei ihrem Indien-Markteintritt und ihrer Geschäftsexpansion durch Strategie auf Vorstandsebene, Indien-Marktberatung und Unterstützung bei Führungsentscheidungen. Ich bringe breite branchenübergreifende Erfahrung kombiniert mit tiefer Expertise im Bereich erneuerbare Energien ein.",
-    },
+    label: "Engagement-Bereiche",
+    headline: "Engagement-Bereiche",
+    subtitle: "Aufsichtsrat, Beratung und Executive Education.",
     items: [
       {
         title: "Aufsichtsratsarbeit",
@@ -99,7 +96,12 @@ export const de = {
   experienceAreas: {
     label: "Expertise-Bereiche",
     headline: "Expertise-Bereiche",
-    intro: "Basierend auf Führungserfahrung in Europa und Indien bringe ich praktische Expertise in internationalem Wachstum, Organisationsentwicklung, erneuerbaren Energien und komplexen Marktumfeldern mit.",
+    intro: "Basierend auf Führungserfahrung in Europa und Indien bringe ich praktische Expertise in internationalem Wachstum, Organisationsentwicklung, erneuerbaren Energien und der Navigation in komplexen Marktumfeldern über Kulturen und Geografien hinweg mit.",
+    india: {
+      title: "Indien: Markteintritt & Wachstum",
+      p1: "Meine berufliche Erfahrung und meine Jahre in Indien haben mir tiefe Einblicke in einen der dynamischsten und am schnellsten wachsenden Märkte der Welt sowie eine bleibende Faszination dafür vermittelt.",
+      p2: "Ich bringe Erfahrung aus erster Hand mit, im Aufbau von Unternehmen, in der Leitung von Organisationen und im Umgang mit komplexen Stakeholder-Umfeldern in Indien. Heute unterstütze ich europäische und nordische Unternehmen bei Markteintritt, Geschäftsexpansion, strategischer Entscheidungsfindung und interkultureller Führung. Meine Erfahrung verbindet breite internationale Geschäftsexpertise mit tiefem Branchenwissen im Bereich erneuerbare Energien und Infrastruktur.",
+    },
     items: [
       {
         title: "Führung",
@@ -142,7 +144,7 @@ export const de = {
         country: "Dänemark",
         degree: "Masterabschlüsse in Politikwissenschaft und Philosophie / Sozialwissenschaft",
         flag: "🇩🇰",
-        takeaway: "Verständnis dafür, wie Unternehmen in unterschiedlichen politischen, regulatorischen und kulturellen Umfeldern agieren und erfolgreich sind.",
+        takeaway: "Verständnis dafür, wie Unternehmen in unterschiedlichen politischen, regulatorischen und kulturellen Umfeldern erfolgreich sind.",
       },
     ],
   },

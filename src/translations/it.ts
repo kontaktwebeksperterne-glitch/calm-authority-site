@@ -75,12 +75,9 @@ export const it = {
     ],
   },
   services: {
-    label: "Aree di intervento",
-    headline: "Competenze che creano valore",
-    india: {
-      title: "India, ingresso nel mercato e crescita",
-      description: "La mia esperienza professionale e gli anni vissuti in India mi hanno dato una profonda conoscenza, e un'affascinazione duratura, per uno dei mercati più dinamici e in più rapida crescita al mondo. Supporto le aziende europee e nordiche nell'ingresso e nell'espansione sul mercato indiano attraverso strategia a livello di consiglio, advisory sul mercato indiano e supporto alle decisioni esecutive. Porto una vasta esperienza intersettoriale combinata con una profonda competenza nelle energie rinnovabili.",
-    },
+    label: "Aree di impegno",
+    headline: "Aree di impegno",
+    subtitle: "Consiglio, advisory ed executive education.",
     items: [
       {
         title: "Lavoro nei consigli",
@@ -99,7 +96,12 @@ export const it = {
   experienceAreas: {
     label: "Aree di competenza",
     headline: "Aree di competenza",
-    intro: "Forte di un'esperienza di leadership in Europa e India, porto competenze pratiche in crescita internazionale, sviluppo organizzativo, energie rinnovabili e ambienti di mercato complessi.",
+    intro: "Forte di un'esperienza di leadership in Europa e India, porto competenze pratiche in crescita internazionale, sviluppo organizzativo, energie rinnovabili e nella navigazione di ambienti di mercato complessi tra culture e geografie.",
+    india: {
+      title: "India: ingresso nel mercato & crescita",
+      p1: "La mia esperienza professionale e gli anni vissuti in India mi hanno dato una profonda conoscenza, e una fascinazione duratura, per uno dei mercati più dinamici e in più rapida crescita al mondo.",
+      p2: "Porto esperienza diretta nella costruzione di aziende, nella guida di organizzazioni e nella gestione di ambienti complessi di stakeholder in India. Oggi supporto le aziende europee e nordiche con ingresso nei mercati, espansione commerciale, decisioni strategiche e leadership interculturale. La mia esperienza unisce un'ampia competenza nel business internazionale a una profonda conoscenza settoriale nelle energie rinnovabili e nelle infrastrutture.",
+    },
     items: [
       {
         title: "Leadership",
@@ -142,7 +144,7 @@ export const it = {
         country: "Danimarca",
         degree: "Lauree magistrali in scienze politiche e filosofia / scienze sociali",
         flag: "🇩🇰",
-        takeaway: "Comprensione di come le aziende operano e hanno successo in contesti politici, normativi e culturali diversi.",
+        takeaway: "Comprensione di come le aziende hanno successo in contesti politici, normativi e culturali diversi.",
       },
     ],
   },

@@ -75,12 +75,9 @@ export const fr = {
     ],
   },
   services: {
-    label: "Domaines d'intervention",
-    headline: "Une expertise qui crée de la valeur",
-    india: {
-      title: "Inde, entrée sur le marché et croissance",
-      description: "Mon expérience professionnelle et mes années de vie en Inde m'ont donné une connaissance approfondie, et une fascination durable, pour l'un des marchés les plus dynamiques et à la croissance la plus rapide au monde. J'accompagne les entreprises européennes et nordiques dans leur entrée sur le marché indien et leur expansion commerciale grâce à une stratégie au niveau du conseil, du conseil sur le marché indien et un soutien à la prise de décision exécutive. J'apporte une large expérience inter-sectorielle combinée à une expertise approfondie dans les énergies renouvelables.",
-    },
+    label: "Domaines d'engagement",
+    headline: "Domaines d'engagement",
+    subtitle: "Conseil d'administration, advisory et formation des dirigeants.",
     items: [
       {
         title: "Mandats d'administrateur",
@@ -99,7 +96,12 @@ export const fr = {
   experienceAreas: {
     label: "Domaines d'expertise",
     headline: "Domaines d'expertise",
-    intro: "Fort d'une expérience de direction en Europe et en Inde, j'apporte une expertise concrète en croissance internationale, développement organisationnel, énergies renouvelables et environnements de marché complexes.",
+    intro: "Fort d'une expérience de direction en Europe et en Inde, j'apporte une expertise concrète en croissance internationale, développement organisationnel, énergies renouvelables et navigation dans des environnements de marché complexes à travers cultures et géographies.",
+    india: {
+      title: "Inde : Entrée sur le marché & croissance",
+      p1: "Mon expérience professionnelle et mes années de vie en Inde m'ont donné une connaissance approfondie, et une fascination durable, pour l'un des marchés les plus dynamiques et à la croissance la plus rapide au monde.",
+      p2: "J'apporte une expérience de première main dans la construction d'entreprises, la direction d'organisations et la navigation dans des environnements de parties prenantes complexes en Inde. Aujourd'hui, j'accompagne les entreprises européennes et nordiques dans l'entrée sur le marché, l'expansion commerciale, la prise de décision stratégique et le leadership interculturel. Mon expérience combine une large expertise du business international avec une connaissance sectorielle approfondie dans les énergies renouvelables et l'infrastructure.",
+    },
     items: [
       {
         title: "Leadership",
@@ -142,7 +144,7 @@ export const fr = {
         country: "Danemark",
         degree: "Masters en sciences politiques et philosophie / sciences sociales",
         flag: "🇩🇰",
-        takeaway: "Compréhension de la manière dont les entreprises opèrent et réussissent dans différents environnements politiques, réglementaires et culturels.",
+        takeaway: "Compréhension de la manière dont les entreprises réussissent dans différents environnements politiques, réglementaires et culturels.",
       },
     ],
   },

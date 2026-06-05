@@ -14,16 +14,18 @@ import slideOxford from "@/assets/slide-oxford-graduation.png";
 import { useLanguage } from "@/context/LanguageContext";
 
 // Alternating order: job / academic / job / academic …
+// Stage-speaking shots (speech-bis & offshore-conference) kept maximally apart,
+// incl. across the loop boundary, so the two podium photos never feel adjacent.
 const slides = [
   { src: slideSpeechBis, alt: "Arne giving a keynote at the BIS conference" },
   { src: slideMdiTeaching, alt: "Arne lecturing at Management Development Institute, India" },
-  { src: slideTalkingColleagues, alt: "Arne discussing with colleagues on an industrial site visit" },
-  { src: slideMdiShawl, alt: "Arne receiving a traditional shawl after a talk at MDI" },
   { src: slideSigning, alt: "Arne signing an agreement with an Indian counterparty" },
-  { src: slideMdiCohort, alt: "Arne with the MDI Murshidabad student cohort" },
-  { src: slideGreenClimate, alt: "Arne at the Green Climate Company stand, Tamil Nadu" },
-  { src: slideOxford, alt: "Arne in academic gown, Oxford Saïd Business School" },
+  { src: slideMdiShawl, alt: "Arne receiving a traditional shawl after a talk at MDI" },
   { src: slideOffshoreConference, alt: "Arne speaking at the Offshore Wind Stakeholders Meet, Tamil Nadu" },
+  { src: slideMdiCohort, alt: "Arne with the MDI Murshidabad student cohort" },
+  { src: slideTalkingColleagues, alt: "Arne discussing with colleagues on an industrial site visit" },
+  { src: slideOxford, alt: "Arne in academic gown, Oxford Saïd Business School" },
+  { src: slideGreenClimate, alt: "Arne at the Green Climate Company stand, Tamil Nadu" },
 ];
 
 const Slideshow = () => {

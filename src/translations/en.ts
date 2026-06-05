@@ -75,12 +75,9 @@ export const en = {
     ],
   },
   services: {
-    label: "Focus areas",
-    headline: "Expertise that creates value",
-    india: {
-      title: "India, market entry and growth",
-      description: "My professional experience and years of living in India have given me deep insight into, and a lasting fascination with, one of the world's most dynamic and fast-growing markets. I support European and Nordic companies in their India market entry and business expansion through board-level strategy, India market advisory, and executive decision support. I bring broad cross-industry experience combined with deep expertise in renewable energy.",
-    },
+    label: "Areas of engagement",
+    headline: "Areas of Engagement",
+    subtitle: "Board, advisory, and executive education.",
     items: [
       {
         title: "Board Work",
@@ -99,7 +96,12 @@ export const en = {
   experienceAreas: {
     label: "Areas of expertise",
     headline: "Areas of Expertise",
-    intro: "Drawing on leadership experience across Europe and India, I bring practical expertise in international growth, organizational development, renewable energy, and complex market environments.",
+    intro: "Drawing on leadership experience across Europe and India, I bring practical expertise in international growth, organizational development, renewable energy, and navigating complex market environments across cultures and geographies.",
+    india: {
+      title: "India: Market Entry & Growth",
+      p1: "My professional experience and years of living in India have given me deep insight into, and a lasting fascination with, one of the world's most dynamic and fast-growing markets.",
+      p2: "I bring first-hand experience of building businesses, leading organizations, and navigating complex stakeholder environments in India. Today, I support European and Nordic companies with market entry, business expansion, strategic decision-making, and cross-cultural leadership. My experience combines broad international business expertise with deep sector knowledge in renewable energy and infrastructure.",
+    },
     items: [
       {
         title: "Leadership",
@@ -142,7 +144,7 @@ export const en = {
         country: "Denmark",
         degree: "Master's Degrees in Political Science and Philosophy / Social Science",
         flag: "🇩🇰",
-        takeaway: "Understanding how businesses operate and succeed across different political, regulatory, and cultural environments.",
+        takeaway: "Understanding how businesses succeed across different political, regulatory, and cultural environments.",
       },
     ],
   },

@@ -75,12 +75,9 @@ export const da = {
     ],
   },
   services: {
-    label: "Fokusområder",
-    headline: "Ekspertise der skaber værdi",
-    india: {
-      title: "Indien, markedsindgang og vækst",
-      description: "Min professionelle erfaring og mange år som bosiddende i Indien har givet mig dyb indsigt i, og en vedvarende fascination af, et af verdens mest dynamiske og hurtigst voksende markeder. Jeg støtter europæiske og nordiske virksomheder i deres indiske markedsindgang og forretningsekspansion gennem strategi på bestyrelsesniveau, rådgivning om det indiske marked og support til executive beslutninger. Jeg bringer bred brancheerfaring kombineret med dyb ekspertise inden for vedvarende energi.",
-    },
+    label: "Engagementsområder",
+    headline: "Engagementsområder",
+    subtitle: "Bestyrelsesarbejde, rådgivning og executive education.",
     items: [
       {
         title: "Bestyrelsesarbejde",
@@ -99,7 +96,12 @@ export const da = {
   experienceAreas: {
     label: "Ekspertiseområder",
     headline: "Ekspertiseområder",
-    intro: "Med udgangspunkt i ledelseserfaring fra Europa og Indien bringer jeg praktisk ekspertise inden for international vækst, organisationsudvikling, vedvarende energi og komplekse markedsmiljøer.",
+    intro: "Med udgangspunkt i ledelseserfaring fra Europa og Indien bringer jeg praktisk ekspertise inden for international vækst, organisationsudvikling, vedvarende energi og navigation i komplekse markedsmiljøer på tværs af kulturer og geografier.",
+    india: {
+      title: "Indien: Markedsindgang & Vækst",
+      p1: "Min professionelle erfaring og mange år i Indien har givet mig dyb indsigt i, og en vedvarende fascination af, et af verdens mest dynamiske og hurtigst voksende markeder.",
+      p2: "Jeg bringer førstehånds erfaring fra at opbygge virksomheder, lede organisationer og navigere komplekse stakeholder-miljøer i Indien. I dag støtter jeg europæiske og nordiske virksomheder med markedsindgang, forretningsekspansion, strategisk beslutningstagen og kulturelt lederskab. Min erfaring kombinerer bred international forretningsekspertise med dyb brancheviden inden for vedvarende energi og infrastruktur.",
+    },
     items: [
       {
         title: "Ledelse",
@@ -142,7 +144,7 @@ export const da = {
         country: "Danmark",
         degree: "Kandidatgrader i statskundskab og filosofi / samfundsvidenskab",
         flag: "🇩🇰",
-        takeaway: "Forståelse for hvordan virksomheder opererer og lykkes på tværs af forskellige politiske, regulatoriske og kulturelle miljøer.",
+        takeaway: "Forståelse for hvordan virksomheder lykkes på tværs af forskellige politiske, regulatoriske og kulturelle miljøer.",
       },
     ],
   },
