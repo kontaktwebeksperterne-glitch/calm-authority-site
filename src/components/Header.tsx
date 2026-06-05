@@ -35,7 +35,8 @@ const Header = () => {
   const navItems = [
     { id: "om", label: t('nav.about') },
     { id: "baggrund", label: t('nav.background') },
-    { id: "fokus", label: t('nav.focus') },
+    { id: "erfaring", label: t('nav.expertise') },
+    { id: "fokus", label: t('nav.engagement') },
     { id: "uddannelse", label: t('nav.education') },
     { id: "anbefalinger", label: t('nav.recommendations') },
   ];

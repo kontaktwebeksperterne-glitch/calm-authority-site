@@ -27,7 +27,7 @@ const EducationSection = () => {
               {edu.country && (
                 <p className="font-serif text-xl md:text-2xl font-semibold text-foreground leading-snug">{edu.country}</p>
               )}
-              <p className="text-sm font-medium text-accent mt-2 mb-4">{edu.degree}</p>
+              <p className="text-sm font-medium text-accent mt-2 mb-4 whitespace-pre-line">{edu.degree}</p>
               <div className="mt-auto flex items-start gap-2 pt-4 border-t border-border">
                 <ArrowRight className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
                 <p className="editorial-body-sm font-medium text-foreground">{edu.takeaway}</p>

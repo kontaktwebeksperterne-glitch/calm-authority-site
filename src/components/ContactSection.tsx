@@ -15,13 +15,13 @@ const ContactSection = () => {
             <p className="editorial-body text-muted-foreground mb-6">{t('contact.description')}</p>
 
             <div className="space-y-3 mb-6">
-              <a href="mailto:arne.lorenzen@yahoo.fr" className="flex items-center gap-4 group">
+              <a href="mailto:arne@arnelorenzen.com" className="flex items-center gap-4 group">
                 <div className="w-11 h-11 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                   <Mail className="w-5 h-5 text-accent" />
                 </div>
                 <div>
                   <span className="block text-xs text-muted-foreground">{t('contact.email')}</span>
-                  <span className="editorial-body-sm text-foreground group-hover:text-accent transition-colors">arne.lorenzen@yahoo.fr</span>
+                  <span className="editorial-body-sm text-foreground group-hover:text-accent transition-colors">arne@arnelorenzen.com</span>
                 </div>
               </a>
 
@@ -65,7 +65,7 @@ const ContactSection = () => {
                 {t('contact.ctaCallDK')}
                 <Phone className="ml-2 w-4 h-4" />
               </a>
-              <a href="mailto:arne.lorenzen@yahoo.fr" className="btn-secondary group">
+              <a href="mailto:arne@arnelorenzen.com" className="btn-secondary group">
                 {t('contact.ctaEmail')}
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>

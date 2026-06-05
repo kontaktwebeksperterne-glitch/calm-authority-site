@@ -2,7 +2,9 @@ export const fr = {
   nav: {
     about: "À propos",
     background: "Parcours",
-    focus: "Domaines",
+    expertise: "Expertise",
+    engagement: "Engagement",
+    focus: "Engagement",
     education: "Formation",
     recommendations: "Témoignages",
     contact: "Contact",
@@ -40,7 +42,7 @@ export const fr = {
   },
   background: {
     label: "Parcours",
-    headline: "Carrière internationale",
+    headline: "Carrière internationale - quelques moments clés",
     items: [
       {
         title: "Conseil d'administration et conseil stratégique",
@@ -128,7 +130,7 @@ export const fr = {
       {
         institution: "Université d'Oxford,",
         country: "UK",
-        degree: "Executive MBA, Saïd Business School",
+        degree: "Executive MBA\nSaïd Business School",
         flag: "🇬🇧",
         takeaway: "Soutien à un leadership efficace, à la croissance et à la prise de décision à travers les marchés et les cultures.",
       },

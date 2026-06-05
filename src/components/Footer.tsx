@@ -15,7 +15,7 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="mailto:arne.lorenzen@yahoo.fr" aria-label="Email" className="w-10 h-10 rounded-lg flex items-center justify-center text-foreground hover:bg-accent/10 hover:text-accent transition-colors">
+            <a href="mailto:arne@arnelorenzen.com" aria-label="Email" className="w-10 h-10 rounded-lg flex items-center justify-center text-foreground hover:bg-accent/10 hover:text-accent transition-colors">
               <Mail className="w-5 h-5" />
             </a>
             <a href="tel:+4577224848" aria-label="Phone" className="w-10 h-10 rounded-lg flex items-center justify-center text-foreground hover:bg-accent/10 hover:text-accent transition-colors">

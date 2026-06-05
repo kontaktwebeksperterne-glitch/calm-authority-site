@@ -2,7 +2,9 @@ export const de = {
   nav: {
     about: "Über mich",
     background: "Werdegang",
-    focus: "Fokus",
+    expertise: "Expertise",
+    engagement: "Engagement",
+    focus: "Engagement",
     education: "Ausbildung",
     recommendations: "Referenzen",
     contact: "Kontakt",
@@ -40,7 +42,7 @@ export const de = {
   },
   background: {
     label: "Werdegang",
-    headline: "Internationale Karriere",
+    headline: "Internationale Karriere - einige Highlights",
     items: [
       {
         title: "Beirat und strategische Beratung",
@@ -128,7 +130,7 @@ export const de = {
       {
         institution: "University of Oxford,",
         country: "UK",
-        degree: "Executive MBA, Saïd Business School",
+        degree: "Executive MBA\nSaïd Business School",
         flag: "🇬🇧",
         takeaway: "Unterstützung effektiver Führung, Wachstum und Entscheidungsfindung über Märkte und Kulturen hinweg.",
       },
