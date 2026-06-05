@@ -25,16 +25,6 @@ const ContactSection = () => {
                 </div>
               </a>
 
-              <a href="tel:+4577224848" className="flex items-center gap-4 group">
-                <div className="w-11 h-11 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                  <Phone className="w-5 h-5 text-accent" />
-                </div>
-                <div>
-                  <span className="block text-xs text-muted-foreground">{t('contact.phoneDK')}</span>
-                  <span className="editorial-body-sm text-foreground group-hover:text-accent transition-colors">+45 77 22 48 48</span>
-                </div>
-              </a>
-
               <a href="tel:+33745574856" className="flex items-center gap-4 group">
                 <div className="w-11 h-11 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                   <Phone className="w-5 h-5 text-accent" />
@@ -42,6 +32,16 @@ const ContactSection = () => {
                 <div>
                   <span className="block text-xs text-muted-foreground">{t('contact.phoneFR')}</span>
                   <span className="editorial-body-sm text-foreground group-hover:text-accent transition-colors">+33 7 45 57 48 56</span>
+                </div>
+              </a>
+
+              <a href="tel:+4577224848" className="flex items-center gap-4 group">
+                <div className="w-11 h-11 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                  <Phone className="w-5 h-5 text-accent" />
+                </div>
+                <div>
+                  <span className="block text-xs text-muted-foreground">{t('contact.phoneDK')}</span>
+                  <span className="editorial-body-sm text-foreground group-hover:text-accent transition-colors">+45 77 22 48 48</span>
                 </div>
               </a>
 
@@ -57,12 +57,12 @@ const ContactSection = () => {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <a href="tel:+4577224848" className="btn-primary group">
-                {t('contact.ctaCallDK')}
-                <Phone className="ml-2 w-4 h-4" />
-              </a>
               <a href="tel:+33745574856" className="btn-primary group">
                 {t('contact.ctaCallFR')}
+                <Phone className="ml-2 w-4 h-4" />
+              </a>
+              <a href="tel:+4577224848" className="btn-primary group">
+                {t('contact.ctaCallDK')}
                 <Phone className="ml-2 w-4 h-4" />
               </a>
               <a href="mailto:arne.lorenzen@yahoo.fr" className="btn-secondary group">

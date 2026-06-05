@@ -127,7 +127,7 @@ export const de = {
     items: [
       {
         institution: "University of Oxford,",
-        country: "England",
+        country: "UK",
         degree: "Executive MBA, Saïd Business School",
         flag: "🇬🇧",
         takeaway: "Unterstützung effektiver Führung, Wachstum und Entscheidungsfindung über Märkte und Kulturen hinweg.",
@@ -144,7 +144,7 @@ export const de = {
         country: "Dänemark",
         degree: "Masterabschlüsse in Politikwissenschaft und Philosophie / Sozialwissenschaft",
         flag: "🇩🇰",
-        takeaway: "Verständnis dafür, wie Unternehmen in unterschiedlichen politischen, regulatorischen und kulturellen Umfeldern erfolgreich sind.",
+        takeaway: "Verständnis dafür, wie Unternehmen in unterschiedlichen politischen, regulatorischen & kulturellen Umfeldern erfolgreich sind.",
       },
     ],
   },
@@ -181,7 +181,7 @@ export const de = {
       {
         quote: "Während seiner Jahre in Indien war Arne ein aktives und hochgeschätztes Mitglied des FICCI Renewable Energy CEO Council. Er trug durchdachte Perspektiven und eine starke internationale Erfahrung zu unseren Diskussionen über Wirtschafts- und Industrieentwicklung in Indien bei. Er leitete erfolgreich eine unserer Arbeitsgruppen und brachte strategische Einsicht sowie einen kollaborativen und praktischen Ansatz ein.",
         name: "Ranjit Gupta",
-        title: "Chairman, CEO Council for Renewable Energy",
+        title: "Chairman\nCEO Council for Renewable Energy",
         meta: "Federation of Indian Chambers of Commerce & Industry (FICCI), New Delhi, Indien",
       },
       {

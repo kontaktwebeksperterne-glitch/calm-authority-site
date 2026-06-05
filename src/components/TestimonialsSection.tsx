@@ -10,7 +10,6 @@ const TestimonialsSection = () => {
     <section id="anbefalinger" aria-labelledby="anbefalinger-heading" className="section-spacing testimonials-bg">
       <div className="container-wide">
         <div className="text-center mb-12 max-w-3xl mx-auto">
-          <span className="editorial-label text-accent mb-3 block">{t('testimonials.label')}</span>
           <h2 id="anbefalinger-heading" className="editorial-heading-lg text-foreground mb-4">{t('testimonials.headline')}</h2>
           <p className="editorial-body text-muted-foreground">{t('testimonials.subheadline')}</p>
         </div>
@@ -24,7 +23,7 @@ const TestimonialsSection = () => {
               </blockquote>
               <figcaption className="mt-5 pt-5 border-t border-border">
                 <div className="font-serif text-lg font-semibold text-foreground">{item.name}</div>
-                <div className="text-sm text-accent mt-0.5">{item.title}</div>
+                <div className="text-sm text-accent mt-0.5 whitespace-pre-line">{item.title}</div>
                 <div className="text-xs text-muted-foreground mt-1">{item.meta}</div>
               </figcaption>
             </figure>
